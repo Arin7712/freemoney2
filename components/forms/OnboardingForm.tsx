@@ -1,10 +1,9 @@
 "use client"
 
-import * as React from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
-import { toast } from "sonner"
 import * as z from "zod"
+import { useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -23,12 +22,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroupTextarea,
-} from "@/components/ui/input-group"
+import {InputGroup} from "@/components/ui/input-group"
 import { userSchema } from "@/schemas/user"
 
 import type { createUser } from "@/lib/actions"; // ✅ GOOD (type-only)
@@ -53,9 +47,10 @@ export default function OnboardingForm({
     },
   })
 
+  const router = useRouter();
 async function onSubmit(data: z.infer<typeof userSchema>) {
    await createUserAction(data.bankingName, data.upiId, userId);
-   
+   router.push("/home");
   }
 
   return (
@@ -86,10 +81,11 @@ async function onSubmit(data: z.infer<typeof userSchema>) {
                     placeholder="Please enter your banking name"
                     autoComplete="off"
                   />
+                  <FieldDescription>Please enter a valid looking name.</FieldDescription>
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
-                </Field>
+                </FieldDescription>
               )}
             />
             <Controller
@@ -109,8 +105,7 @@ async function onSubmit(data: z.infer<typeof userSchema>) {
                     />
                   </InputGroup>
                   <FieldDescription>
-                    Include steps to reproduce, expected behavior, and what
-                    actually happened.
+                    Please add @oksbi after your upi name. Ex - abc@oksbi
                   </FieldDescription>
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />

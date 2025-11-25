@@ -27,7 +27,7 @@ export async function createUser(
   );
   
   console.log("User successfully created.");
-  redirect("/home");
+  return user;
   } catch (error) {
     console.error("❌ Failed to create user:", error);
     throw error;

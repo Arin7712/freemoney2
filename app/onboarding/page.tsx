@@ -1,14 +1,12 @@
 import OnboardingForm from '@/components/forms/OnboardingForm'
 import { createUser } from '@/lib/actions';
 import { currentUser } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
-import React from 'react'
 
 const Page = async() => {
 
     const user = await currentUser();
     return (
-    <div>
+    <div className='flex items-center justify-center h-screen'>
       <OnboardingForm userId={user?.id || ''} createUserAction={createUser}/>
     </div>
   )

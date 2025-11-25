@@ -6,9 +6,10 @@ import Link from 'next/link';
 const page = () => {
   return (
     <div>
-      Home
-        <SignOutButton/>
-        <Link href="/sign-in">Get Starteed</Link>
+      <h1>Home</h1>
+      <Button asChild>
+        <Link href="/sign-in">Get Started</Link>
+      </Button>
     </div>
   )
 }
