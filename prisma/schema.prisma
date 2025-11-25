@@ -21,3 +21,13 @@ model User {
   clerkId     String   @unique
   createdAt   DateTime @default(now())
 }
+
+model Transaction {
+  receiverName String
+  receiverUpi  String
+  upiApp       String
+  transactionId String @unique
+  dateTime     String
+  amount       String
+
+}
