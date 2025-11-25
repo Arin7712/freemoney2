@@ -8,7 +8,7 @@ const page = () => {
     <div>
       Home
         <SignOutButton/>
-        <Link href="/home">Get Starteed</Link>
+        <Link href="/sign-in">Get Starteed</Link>
     </div>
   )
 }
