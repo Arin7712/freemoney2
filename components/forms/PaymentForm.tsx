@@ -67,7 +67,14 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
             <h1 className="text-xl font-semibold mb-2">Free Money</h1>
             <p>We pay for you.</p>
           </div>
-
+            <input
+            id="scanner"
+            type="file"
+            accept="image/*"
+            capture="environment"
+            className=""
+            onChange={handleFile}
+          />
           {/* Upload Scanner */}
           <div className="flex flex-col gap-1">
             <Label htmlFor="scanner" className="text-sm">
@@ -77,6 +84,7 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
               id="scanner"
               type="file"
               accept="image/*"
+              capture="environment"
               className="border border-neutral-700 rounded-md px-3 py-2"
               onChange={handleFile}
             />

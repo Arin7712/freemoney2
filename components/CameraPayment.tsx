@@ -107,13 +107,13 @@ const CameraPayment: React.FC<{ data: PaymentData }> = ({ data }) => {
       </div>
 
       {/* Preview Thumbnail */}
-      {preview && (
+      {/* {preview && (
         <img
           src={preview}
           alt="preview"
           className="w-40 rounded-lg border border-gray-600"
         />
-      )}
+      )} */}
 
       {/* Payment UI */}
       <div className="flex justify-center text-background">
