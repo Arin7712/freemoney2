@@ -85,7 +85,7 @@ async function onSubmit(data: z.infer<typeof userSchema>) {
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
-                </FieldDescription>
+                </Field>
               )}
             />
             <Controller
