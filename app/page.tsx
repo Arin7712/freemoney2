@@ -3,6 +3,7 @@ import { SignOutButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import Transaction from '@/components/Transaction';
+import OnboardingForm from '@/components/forms/OnboardingForm';
 
 const page = () => {
   return (
@@ -11,7 +12,7 @@ const page = () => {
       <Button asChild>
         <Link href="/sign-in">Get Started</Link>
       </Button>
-      <Transaction/>
+      <OnboardingForm/>
     </div>
   )
 }

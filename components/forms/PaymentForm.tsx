@@ -10,6 +10,7 @@ import { extractReceiverName, extractUpiId } from "@/lib/form.actions";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import Transaction from "../Transaction";
 
 
 type PaymentFormProps = {
@@ -67,7 +68,11 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
             <h1 className="text-xl font-semibold mb-2">Free Money</h1>
             <p>We pay for you.</p>
           </div>
-            <input
+          <div className="flex flex-col gap-1">
+            <Label htmlFor="scanner" className="text-sm">
+              Open camera
+            </Label>
+            <Input
             id="scanner"
             type="file"
             accept="image/*"
@@ -75,6 +80,7 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
             className=""
             onChange={handleFile}
           />
+          </div>
           {/* Upload Scanner */}
           <div className="flex flex-col gap-1">
             <Label htmlFor="scanner" className="text-sm">
@@ -152,7 +158,9 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
             />
           </div>
         </div>
+
         <PaymentImage data={data} />
+        <Transaction data={data}/>
       </div>
     </div>
   );

@@ -54,9 +54,9 @@ async function onSubmit(data: z.infer<typeof userSchema>) {
   }
 
   return (
-    <div className="flex items-center justify-center md:h-screen">
+    <div className="flex items-center justify-center md:h-screen md:w-[40%] w-full md:px-0 px-6">
 
-    <Card className="w-full sm:max-w-md">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Free money - Risk hai toh ishq hai !</CardTitle>
         <CardDescription>
