@@ -28,6 +28,7 @@ export type UserMinAggregateOutputType = {
   id: string | null
   bankingName: string | null
   upiId: string | null
+  name: string | null
   onBoarded: boolean | null
   clerkId: string | null
   createdAt: Date | null
@@ -37,6 +38,7 @@ export type UserMaxAggregateOutputType = {
   id: string | null
   bankingName: string | null
   upiId: string | null
+  name: string | null
   onBoarded: boolean | null
   clerkId: string | null
   createdAt: Date | null
@@ -46,6 +48,7 @@ export type UserCountAggregateOutputType = {
   id: number
   bankingName: number
   upiId: number
+  name: number
   onBoarded: number
   clerkId: number
   createdAt: number
@@ -57,6 +60,7 @@ export type UserMinAggregateInputType = {
   id?: true
   bankingName?: true
   upiId?: true
+  name?: true
   onBoarded?: true
   clerkId?: true
   createdAt?: true
@@ -66,6 +70,7 @@ export type UserMaxAggregateInputType = {
   id?: true
   bankingName?: true
   upiId?: true
+  name?: true
   onBoarded?: true
   clerkId?: true
   createdAt?: true
@@ -75,6 +80,7 @@ export type UserCountAggregateInputType = {
   id?: true
   bankingName?: true
   upiId?: true
+  name?: true
   onBoarded?: true
   clerkId?: true
   createdAt?: true
@@ -157,6 +163,7 @@ export type UserGroupByOutputType = {
   id: string
   bankingName: string
   upiId: string
+  name: string | null
   onBoarded: boolean
   clerkId: string
   createdAt: Date
@@ -187,6 +194,7 @@ export type UserWhereInput = {
   id?: Prisma.StringFilter<"User"> | string
   bankingName?: Prisma.StringFilter<"User"> | string
   upiId?: Prisma.StringFilter<"User"> | string
+  name?: Prisma.StringNullableFilter<"User"> | string | null
   onBoarded?: Prisma.BoolFilter<"User"> | boolean
   clerkId?: Prisma.StringFilter<"User"> | string
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -196,6 +204,7 @@ export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   bankingName?: Prisma.SortOrder
   upiId?: Prisma.SortOrder
+  name?: Prisma.SortOrderInput | Prisma.SortOrder
   onBoarded?: Prisma.SortOrder
   clerkId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -209,6 +218,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   bankingName?: Prisma.StringFilter<"User"> | string
   upiId?: Prisma.StringFilter<"User"> | string
+  name?: Prisma.StringNullableFilter<"User"> | string | null
   onBoarded?: Prisma.BoolFilter<"User"> | boolean
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
 }, "id" | "clerkId">
@@ -217,6 +227,7 @@ export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   bankingName?: Prisma.SortOrder
   upiId?: Prisma.SortOrder
+  name?: Prisma.SortOrderInput | Prisma.SortOrder
   onBoarded?: Prisma.SortOrder
   clerkId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -232,6 +243,7 @@ export type UserScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"User"> | string
   bankingName?: Prisma.StringWithAggregatesFilter<"User"> | string
   upiId?: Prisma.StringWithAggregatesFilter<"User"> | string
+  name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   onBoarded?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
   clerkId?: Prisma.StringWithAggregatesFilter<"User"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -241,6 +253,7 @@ export type UserCreateInput = {
   id?: string
   bankingName: string
   upiId: string
+  name?: string | null
   onBoarded?: boolean
   clerkId: string
   createdAt?: Date | string
@@ -250,6 +263,7 @@ export type UserUncheckedCreateInput = {
   id?: string
   bankingName: string
   upiId: string
+  name?: string | null
   onBoarded?: boolean
   clerkId: string
   createdAt?: Date | string
@@ -259,6 +273,7 @@ export type UserUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   bankingName?: Prisma.StringFieldUpdateOperationsInput | string
   upiId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   onBoarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
   clerkId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -268,6 +283,7 @@ export type UserUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   bankingName?: Prisma.StringFieldUpdateOperationsInput | string
   upiId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   onBoarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
   clerkId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -277,6 +293,7 @@ export type UserCreateManyInput = {
   id?: string
   bankingName: string
   upiId: string
+  name?: string | null
   onBoarded?: boolean
   clerkId: string
   createdAt?: Date | string
@@ -286,6 +303,7 @@ export type UserUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   bankingName?: Prisma.StringFieldUpdateOperationsInput | string
   upiId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   onBoarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
   clerkId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -295,6 +313,7 @@ export type UserUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   bankingName?: Prisma.StringFieldUpdateOperationsInput | string
   upiId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   onBoarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
   clerkId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -304,6 +323,7 @@ export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bankingName?: Prisma.SortOrder
   upiId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   onBoarded?: Prisma.SortOrder
   clerkId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -313,6 +333,7 @@ export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bankingName?: Prisma.SortOrder
   upiId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   onBoarded?: Prisma.SortOrder
   clerkId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -322,6 +343,7 @@ export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bankingName?: Prisma.SortOrder
   upiId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   onBoarded?: Prisma.SortOrder
   clerkId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -329,6 +351,10 @@ export type UserMinOrderByAggregateInput = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
 }
 
 export type BoolFieldUpdateOperationsInput = {
@@ -345,6 +371,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   id?: boolean
   bankingName?: boolean
   upiId?: boolean
+  name?: boolean
   onBoarded?: boolean
   clerkId?: boolean
   createdAt?: boolean
@@ -354,6 +381,7 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   bankingName?: boolean
   upiId?: boolean
+  name?: boolean
   onBoarded?: boolean
   clerkId?: boolean
   createdAt?: boolean
@@ -363,6 +391,7 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   bankingName?: boolean
   upiId?: boolean
+  name?: boolean
   onBoarded?: boolean
   clerkId?: boolean
   createdAt?: boolean
@@ -372,12 +401,13 @@ export type UserSelectScalar = {
   id?: boolean
   bankingName?: boolean
   upiId?: boolean
+  name?: boolean
   onBoarded?: boolean
   clerkId?: boolean
   createdAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "bankingName" | "upiId" | "onBoarded" | "clerkId" | "createdAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "bankingName" | "upiId" | "name" | "onBoarded" | "clerkId" | "createdAt", ExtArgs["result"]["user"]>
 
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
@@ -386,6 +416,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     id: string
     bankingName: string
     upiId: string
+    name: string | null
     onBoarded: boolean
     clerkId: string
     createdAt: Date
@@ -815,6 +846,7 @@ export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'String'>
   readonly bankingName: Prisma.FieldRef<"User", 'String'>
   readonly upiId: Prisma.FieldRef<"User", 'String'>
+  readonly name: Prisma.FieldRef<"User", 'String'>
   readonly onBoarded: Prisma.FieldRef<"User", 'Boolean'>
   readonly clerkId: Prisma.FieldRef<"User", 'String'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>

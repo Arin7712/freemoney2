@@ -3,6 +3,7 @@
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { redirect } from "next/navigation";
+import { io } from "socket.io-client";
 
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL,
@@ -45,4 +46,15 @@ export async function findUser(clerkId: string) {
     console.error("❌ Failed to find user by clerkId:", error);
     throw error;
   }
+}
+
+
+export async function addName(clerkId, name) {
+  await prisma.user.update({
+    where: { clerkId },
+    data: { name },
+  });
+
+  // 🔥 Emit WebSocket event
+  io.emit("nameUpdated", { clerkId, newName: name });
 }
