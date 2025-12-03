@@ -62,7 +62,7 @@ const PaymentImage = ({ data }: any) => {
   return (
     <div>
       <div className="flex justify-center text-background">
-        <div className="w-[340px] bg-[#131313] p-6 h-fit py-20" ref={imgRef}>
+        <div className="w-[340px] bg-[#131313] p-6 h-fit py-20 relative" ref={imgRef}>
           {/* Top */}
           <div className="flex flex-col gap-2 items-center justify-center">
             <div className="rounded-full w-12 h-12 flex items-center justify-center p-3 bg-[#00579c]">
@@ -72,10 +72,12 @@ const PaymentImage = ({ data }: any) => {
           </div>
 
           <div className="flex flex-col gap-4 justify-center items-center pt-4 pb-6">
+            <div className="flex items-center gap-0.5">
+              <span className="text-[34px] pb-1 pt-1">₹</span>
             <h1 className="text-[46px]">
-              <span className="text-[34px]">₹</span>
               {data.amount}
             </h1>
+            </div>
             <Button className="bg-[#a8c8fb] text-black text-[12px] rounded-full px-6 py-1.5 font-normal">
               Pay again
             </Button>
@@ -140,6 +142,10 @@ const PaymentImage = ({ data }: any) => {
           <div className="flex flex-col items-center justify-center py-6">
             <p className="text-[7px] tracking-wide">POWERED BY</p>
             <img src="/upi2.png" alt="UPI" width={54} height={54} />
+          </div>
+          <div className="flex items-center gap-1 absolute bottom-4 right-36">
+        <Image src="/gpay2.png" alt="Google Pay" width={18} height={18} className=""/>
+        <h1 className="text-lg">Pay</h1>
           </div>
         </div>
       </div>
