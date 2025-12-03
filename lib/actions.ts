@@ -48,13 +48,3 @@ export async function findUser(clerkId: string) {
   }
 }
 
-
-export async function addName(clerkId, name) {
-  await prisma.user.update({
-    where: { clerkId },
-    data: { name },
-  });
-
-  // 🔥 Emit WebSocket event
-  io.emit("nameUpdated", { clerkId, newName: name });
-}
