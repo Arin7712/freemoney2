@@ -23,6 +23,7 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
   const [upiLink, setUpiLink] = useState("");
   const [receiverName, setReceiverName] = useState("");
 
+
   // Accepts scanned QR code and extracts UPI ID and Receiver Name
   const handleFile = async (e: any) => {
     const file = e.target.files[0];
@@ -89,8 +90,6 @@ const PaymentForm = ({ name, yourupiid }: PaymentFormProps) => {
             <Input
               id="scanner"
               type="file"
-              accept="image/*"
-              capture="environment"
               className="border border-neutral-700 rounded-md px-3 py-2"
               onChange={handleFile}
             />
